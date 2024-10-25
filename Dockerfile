@@ -2,7 +2,7 @@
 # Initialize device type args
 # use build args in the docker build command with --build-arg="BUILDARG=true"
 ARG USE_CUDA=false
-ARG USE_OLLAMA=false
+ARG USE_OLLAMA=true
 # Tested with cu117 for CUDA 11 and cu121 for CUDA 12 (default)
 ARG USE_CUDA_VER=cu121
 # any sentence transformer model; models to use can be found at https://huggingface.co/models?library=sentence-transformers
@@ -15,7 +15,7 @@ ARG USE_RERANKING_MODEL=""
 # Tiktoken encoding name; models to use can be found at https://huggingface.co/models?library=tiktoken
 ARG USE_TIKTOKEN_ENCODING_NAME="cl100k_base"
 
-ARG BUILD_HASH=dev-build
+ARG BUILD_HASH=prod
 # Override at your own risk - non-root configurations are untested
 ARG UID=0
 ARG GID=0
