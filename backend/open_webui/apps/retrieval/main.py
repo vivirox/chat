@@ -16,8 +16,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 
+<<<<<<< HEAD
 from open_webui.apps.webui.models.knowledge import Knowledges
 
+=======
+from open_webui.storage.provider import Storage
+from open_webui.apps.webui.models.knowledge import Knowledges
+>>>>>>> d905bda000af3d84e1c59f54243537ce249829b7
 from open_webui.apps.retrieval.vector.connector import VECTOR_DB_CLIENT
 
 # Document loaders
@@ -709,8 +714,10 @@ def save_docs_to_vector_db(
             if overwrite:
                 VECTOR_DB_CLIENT.delete_collection(collection_name=collection_name)
                 log.info(f"deleting existing collection {collection_name}")
-
-            if add is False:
+            elif add is False:
+                log.info(
+                    f"collection {collection_name} already exists, overwrite is False and add is False"
+                )
                 return True
 
         log.info(f"adding to collection {collection_name}")
@@ -822,15 +829,14 @@ def process_file(
         else:
             # Process the file and save the content
             # Usage: /files/
-
-            file_path = file.meta.get("path", None)
+            file_path = file.path
             if file_path:
+                file_path = Storage.get_file(file_path)
                 loader = Loader(
                     engine=app.state.config.CONTENT_EXTRACTION_ENGINE,
                     TIKA_SERVER_URL=app.state.config.TIKA_SERVER_URL,
                     PDF_EXTRACT_IMAGES=app.state.config.PDF_EXTRACT_IMAGES,
                 )
-
                 docs = loader.load(
                     file.filename, file.meta.get("content_type"), file_path
                 )
@@ -846,7 +852,6 @@ def process_file(
                         },
                     )
                 ]
-
             text_content = " ".join([doc.page_content for doc in docs])
 
         log.debug(f"text_content: {text_content}")

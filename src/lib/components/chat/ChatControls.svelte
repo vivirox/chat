@@ -230,7 +230,11 @@
 					<div
 						class="w-full {($showOverview || $showArtifacts) && !$showCallOverlay
 							? ' '
+<<<<<<< HEAD
 							: 'px-4 py-4 bg-white dark:shadow-lg dark:bg-gray-850  border border-gray-50 dark:border-gray-800'}  rounded-lg z-40 pointer-events-auto overflow-y-auto scrollbar-hidden"
+=======
+							: 'px-4 py-4 bg-white dark:shadow-lg dark:bg-gray-850  border border-gray-50 dark:border-gray-850'}  rounded-xl z-40 pointer-events-auto overflow-y-auto scrollbar-hidden"
+>>>>>>> d905bda000af3d84e1c59f54243537ce249829b7
 					>
 						{#if $showCallOverlay}
 							<div class="w-full h-full flex justify-center">

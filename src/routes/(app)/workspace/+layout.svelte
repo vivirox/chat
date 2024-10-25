@@ -51,7 +51,11 @@
 
 				<div class="">
 					<div
+<<<<<<< HEAD
 						class="flex scrollbar-none overflow-x-auto w-fit text-center text-sm font-medium rounded-full bg-transparent/10 backdrop-blur-2xl p-1 shadow-2xl touch-auto pointer-events-auto"
+=======
+						class="flex scrollbar-none overflow-x-auto w-fit text-center text-sm font-medium rounded-full bg-transparent/10 backdrop-blur-2xl p-1 touch-auto pointer-events-auto"
+>>>>>>> d905bda000af3d84e1c59f54243537ce249829b7
 					>
 						<a
 							class="min-w-fit rounded-full p-1.5 px-3 {$page.url.pathname.includes(
@@ -110,7 +114,11 @@
 			</div>
 		</div>
 
+<<<<<<< HEAD
 		<div class=" pb-1 px-5 flex-1 max-h-full overflow-y-auto">
+=======
+		<div class=" pb-1 px-[18px] flex-1 max-h-full overflow-y-auto">
+>>>>>>> d905bda000af3d84e1c59f54243537ce249829b7
 			<slot />
 		</div>
 	</div>

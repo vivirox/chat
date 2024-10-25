@@ -28,6 +28,10 @@
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import Switch from '$lib/components/common/Switch.svelte';
 	import { text } from '@sveltejs/kit';
+<<<<<<< HEAD
+=======
+	import Textarea from '$lib/components/common/Textarea.svelte';
+>>>>>>> d905bda000af3d84e1c59f54243537ce249829b7
 
 	const i18n = getContext('i18n');
 
@@ -629,11 +633,17 @@
 					content={$i18n.t('Leave empty to use the default prompt, or enter a custom prompt')}
 					placement="top-start"
 				>
+<<<<<<< HEAD
 					<textarea
 						bind:value={querySettings.template}
 						placeholder={$i18n.t('Leave empty to use the default prompt, or enter a custom prompt')}
 						class="w-full rounded-lg px-4 py-3 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none resize-none"
 						rows="4"
+=======
+					<Textarea
+						bind:value={querySettings.template}
+						placeholder={$i18n.t('Leave empty to use the default prompt, or enter a custom prompt')}
+>>>>>>> d905bda000af3d84e1c59f54243537ce249829b7
 					/>
 				</Tooltip>
 			</div>
@@ -651,8 +661,13 @@
 						class="dark:bg-gray-900 w-fit pr-8 rounded px-2 text-xs bg-transparent outline-none text-right"
 						bind:value={textSplitter}
 					>
+<<<<<<< HEAD
 						<option value="">{$i18n.t('Default (Character)')} </option>
 						<option value="token">{$i18n.t('Token (Tiktoken)')}</option>
+=======
+						<option value="">{$i18n.t('Default')} ({$i18n.t('Character')})</option>
+						<option value="token">{$i18n.t('Token')} ({$i18n.t('Tiktoken')})</option>
+>>>>>>> d905bda000af3d84e1c59f54243537ce249829b7
 					</select>
 				</div>
 			</div>
@@ -815,7 +830,7 @@
 	</div>
 	<div class="flex justify-end pt-3 text-sm font-medium">
 		<button
-			class=" px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-lg"
+			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
 			type="submit"
 		>
 			{$i18n.t('Save')}
