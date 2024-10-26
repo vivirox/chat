@@ -26,12 +26,12 @@ ARG BUILD_HASH
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json ./
+RUN npm install bun && bun install --frozen-lockfile
 
 COPY . .
 ENV APP_BUILD_HASH=${BUILD_HASH}
-RUN npm run build
+RUN bun run build
 
 ######## WebUI backend ########
 FROM python:3.11-slim-bookworm AS base
