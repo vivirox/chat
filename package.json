@@ -85,10 +85,6 @@
     "turndown": "^7.2.0",
     "uuid": "^9.0.1"
   },
-  "engines": {
-    "node": ">=18.13.0 <=22.x.x",
-    "npm": ">=6.0.0"
-  },
   "trustedDependencies": [
     "@contrast/fn-inspect",
     "@newrelic/native-metrics",
